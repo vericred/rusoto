@@ -20108,7 +20108,8 @@ struct VpcSecurityGroupIdListSerializer;
 impl VpcSecurityGroupIdListSerializer {
     fn serialize(params: &mut Params, name: &str, obj: &Vec<String>) {
         for (index, obj) in obj.iter().enumerate() {
-            let key = format!("{}.member.{}", name, index + 1);
+            // let key = format!("{}.member.{}", name, index + 1);
+            let key = format!("VpcSecurityGroupIds.{}.{}", name, index + 1);
             params.put(&key, &obj);
         }
     }
